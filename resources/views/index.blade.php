@@ -1,0 +1,18 @@
+@extends('layouts.app')
+@section('content')
+<div class="container index">
+<header>
+        <h1>Главная</h1>
+    </header><header>
+        <h2>Lorem Ipsum</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac nisi euismod, posuere ante in, dignissim risus. Duis lectus lorem, accumsan eget magna eu, sodales mattis velit. Donec et augue sed purus tincidunt tempus. Cras aliquam dolor sit amet mattis malesuada. Mauris nunc nulla, congue eu sem non, feugiat placerat purus. Vivamus mollis sem sit amet elit mattis lacinia. Etiam sed hendrerit eros. Praesent interdum risus vel massa sodales accumsan. Aenean non eros metus. In vitae turpis justo. Quisque id sagittis nibh. Nam in mi et nunc pretium pharetra. Sed malesuada ipsum et ipsum cursus, vel eleifend sapien congue. Nullam placerat nec libero ac condimentum. Vestibulum maximus mollis leo, a lobortis erat eleifend cursus. Pellentesque porta pulvinar dui, vel luctus quam blandit et.
+
+Donec nec leo sit amet diam vestibulum imperdiet non id lacus. Quisque a scelerisque nibh. Fusce in nibh eros. Donec vitae ornare dolor, eget congue ligula. Nam ipsum elit, varius vel velit vel, congue suscipit quam. Fusce lobortis lorem ante, et viverra risus facilisis quis. Aliquam erat volutpat. Phasellus feugiat lectus eu tortor molestie, in venenatis neque varius. Maecenas augue diam, varius sit amet neque et, pulvinar laoreet orci. Integer laoreet interdum tellus eu facilisis. Morbi nisl ex, dictum at cursus in, tristique faucibus sem. Cras a odio vitae est gravida fermentum eu at neque. Maecenas porta nibh non dapibus pharetra. Curabitur bibendum, dui in commodo mollis, odio ligula ultrices sapien, in tristique mi nisi cursus est. Maecenas placerat sed sapien in lacinia. Nulla quis ex ut ex lobortis dignissim.
+
+Curabitur dignissim pulvinar lacus, vitae facilisis nibh ornare ac. Ut hendrerit vel velit ac facilisis. Donec elementum mattis leo, sit amet condimentum lorem. Ut feugiat felis augue. Proin eget arcu id augue accumsan gravida. Vivamus consectetur pharetra fermentum. Maecenas cursus sagittis ipsum in pharetra. Vivamus feugiat mollis leo ut facilisis. Sed eros sem, pharetra eget vestibulum in, aliquet a quam. Phasellus facilisis dictum facilisis. Aliquam erat volutpat. Suspendisse ac dignissim lorem, ut ornare eros. Proin porta convallis auctor. Sed ac auctor mauris.
+
+Fusce iaculis pulvinar iaculis. Aliquam dapibus vulputate diam. Ut a metus arcu. Morbi viverra pretium quam a feugiat. Mauris nec ullamcorper eros. Sed augue mi, hendrerit id fermentum ac, rutrum at mi. Nullam eu ligula laoreet, tempor nisi eget, porta sem. Praesent sit amet diam a lorem ultrices cursus. Praesent imperdiet sed eros sit amet sagittis. Nunc auctor urna quis tellus pharetra tempor. Nulla tincidunt est dolor, nec blandit diam consectetur non. Cras purus diam, lacinia sed suscipit volutpat, luctus at tellus. Pellentesque ullamcorper posuere sem, sed luctus lorem consectetur vel.
+
+Integer egestas, lacus nec tincidunt tincidunt, sapien diam dapibus mauris, sit amet condimentum enim nisi quis lectus. Nullam feugiat luctus lacus, sed ornare purus tristique placerat. Proin id imperdiet massa. Pellentesque et dui vitae velit commodo suscipit id vitae lorem. Phasellus id metus suscipit, aliquam tellus ac, aliquam ante. In sed ante vestibulum, ornare sem nec, pellentesque tortor. Pellentesque imperdiet semper dui, vitae blandit mi pharetra vel. Fusce sit amet sodales nisl, at varius sem. Fusce quis elit interdum, pulvinar ante sit amet, vulputate purus. Proin sagittis tempus mauris, varius rutrum elit volutpat ac. Nunc quam enim, egestas ac elit at, aliquam vestibulum massa. Aenean tincidunt nec quam ut gravida.</p>
+</div>
+@endsection
