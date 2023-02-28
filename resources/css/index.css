@@ -4,6 +4,10 @@ header {
     top: 30px;
 }
 
+.column {
+    flex-direction: column;
+}
+
 body {
     font-family: 'Open Sans';
 }
@@ -121,8 +125,8 @@ a {
 
 .nav .nav-item .index:hover,
 .nav .nav-item .index:focus,
-.nav .nav-item .katalog:hover,
-.nav .nav-item .katalog:focus,
+.nav .nav-item .catalog:hover,
+.nav .nav-item .catalog:focus,
 .nav .nav-item .about:hover,
 .nav .nav-item .about:focus,
 .nav .nav-item .contacts:hover,
@@ -197,7 +201,7 @@ header .nav {
 }
 
 .new .card-title,
-.katalog .card-title {
+.catalog .card-title {
     margin-top: -1rem;
     margin-bottom: 2rem;
 }
@@ -283,16 +287,16 @@ footer {
     background: #7E624D;
 }
 
-.katalog,
-.katalog .new-cards {
+.catalog,
+.catalog .new-cards {
     gap: 3.125rem;
 }
 
-.katalog .card-body p {
+.catalog .card-body p {
     margin-bottom: 0;
 }
 
-.katalog .header-bg {
+.catalog .header-bg {
     position: absolute;
     width: 50%;
     height: 140.4rem;
@@ -458,7 +462,7 @@ footer {
     border: 1px solid #000;
 }
 
-.busket .katalog .size {
+.busket .catalog .size {
     padding: 12px 30px 12px 30px;
     border: 1px solid #000;
     background: #fff;
@@ -470,7 +474,7 @@ footer {
     color: #000;
 }
 
-.busket .katalog .close-button {
+.busket .catalog .close-button {
     border-radius: 100px;
     width: 41px;
     height: 41px;
@@ -500,7 +504,7 @@ footer {
     background: #927057;
 }
 
-.busket .katalog .price {
+.busket .catalog .price {
     width: 11.6rem;
     margin-top: 2.5rem;
     padding: 1.5rem 3rem;

@@ -108,11 +108,11 @@ return [
     'not_regex' => 'The :attribute format is invalid.',
     'numeric' => 'The :attribute must be a number.',
     'password' => [
-        'letters' => ':attribute должен содержать по крайней мере одну букву.',
-        'mixed' => ':attribute должен содержать по крайней мере одну заглавную и одну строчную букву.',
-        'numbers' => ':attribute должен содержать хотя бы одно число.',
-        'symbols' => ':attribute должен содержать хотя бы один символ.',
-        'uncompromised' => 'Данный :attribute  появился в результате утечки данных. Пожалуйста, выберите другой :attribute.',
+        'letters' => 'The :attribute must contain at least one letter.',
+        'mixed' => 'The :attribute must contain at least one uppercase and one lowercase letter.',
+        'numbers' => 'The :attribute must contain at least one number.',
+        'symbols' => 'The :attribute must contain at least one symbol.',
+        'uncompromised' => 'The given :attribute has appeared in a data leak. Please choose a different :attribute.',
     ],
     'present' => 'The :attribute field must be present.',
     'prohibited' => 'The :attribute field is prohibited.',
@@ -158,9 +158,9 @@ return [
     */
 
     'custom' => [
-        'name.regex' =>':attribute только на кириллице',
-        'surname.regex' =>':attribute только на кириллице',
-        'patronymic.regex' =>':attribute только на кириллице',
+        'attribute-name' => [
+            'rule-name' => 'custom-message',
+        ],
     ],
 
     /*
@@ -174,11 +174,6 @@ return [
     |
     */
 
-    'attributes' => [
-        'name' => 'Имя',
-        'surname' => 'Фамилия',
-        'patronymic' => 'Отчество',
-        'password' => 'Пароль',
-    ],
+    'attributes' => [],
 
 ];
