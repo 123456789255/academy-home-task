@@ -18,7 +18,7 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
     <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
-    <link rel="shortcut icon" href="/public/img/logo.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="/public/img/logo.png" type="image/x-icon">
 </head>
 
 <body>
@@ -26,7 +26,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="/public/img/logo.jpg" alt="Logo" class="logo">
+                    <img src="/public/img/logo.png" alt="Logo" class="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -64,6 +64,11 @@
                                 </a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('orders.index') }}">
+                                    {{ __('Заказы') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -84,7 +89,7 @@
             @yield('content')
         </main>
         <footer class="w-100">
-            <p class="text-center">TRUE GAMES</p>
+            <p class="text-center text-uppercase">Copy Star</p>
         </footer>
     </div>
     <script src="{{ asset('/js/script.js') }}"></script>

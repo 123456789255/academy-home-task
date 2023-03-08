@@ -9,28 +9,44 @@ use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
-    public function addToCart(Product $product, Request $request)
+    public function addToCart(Request $request, $id)
     {
-        // Проверяем, что пользователь авторизован
         if (!Auth::check()) {
             return redirect()->route('login');
         }
 
-        $productId = $request->input('product_id');
-        $quantity = $request->input('quantity', 1);
+        $product = Product::find($id);
 
-        $product = Product::findOrFail($productId);
-
-        // Проверяем, что на складе достаточно товара
-        if ($product->quantity < $quantity) {
-            return redirect()->back()->with('Ошибка', 'На складе недостаточно товара.');
+        if (!$product) {
+            abort(404);
         }
 
-        $cart = Cart::firstOrNew(['user_id' => auth()->id(), 'product_id' => $productId]);
-        $cart->quantity += $quantity;
-        $cart->save();
+        $quantity = $request->input('quantity', 1);
 
-        return redirect()->back();
+        if ($quantity > $product->quantity) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Товаров в наличии недостаточно',
+            ]);
+        }
+
+        $cart = Cart::where('user_id', Auth::id())
+            ->where('product_id', $product->id)
+            ->first();
+
+        if ($cart) {
+            $cart->quantity += $quantity;
+            $cart->save();
+        } else {
+            $cart = new Cart([
+                'user_id' => Auth::id(),
+                'product_id' => $product->id,
+                'quantity' => $quantity,
+            ]);
+            $cart->save();
+        }
+
+        return redirect()->route('catalog');
     }
 
 
@@ -84,18 +100,25 @@ class CartController extends Controller
         return redirect()->back();
     }
 
-    public function removeAllFromCart(Request $request, $productId)
+    public function removeAllFromCart($cartId)
     {
-        // Проверяем, что пользователь авторизован
-        if (!Auth::check()) {
-            return response()->json(['error' => 'Необходимо авторизоваться']);
+        $cart = Cart::find($cartId);
+
+        if (!$cartId) {
+            abort(404);
         }
 
-        $cart = Cart::where('product_id', $productId)->first();
-        $cart->delete();
+        if ($cart) {
+            $cart->delete();
+        } else {
+            return back()->withErrors(['cart' => "Товар '{$product->name}' не найден в корзине"]);
+        }
 
-        return redirect()->back();
+        return redirect()->route('cart.show');
     }
+
+
+
 
     public function showCart()
     {
@@ -104,7 +127,7 @@ class CartController extends Controller
             return redirect('/login');
         }
 
-        $carts = Cart::with('product')->get();
+        $carts = Cart::where('user_id', Auth::id())->with('product')->get();
 
         return view('cart', compact('carts'));
     }

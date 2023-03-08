@@ -8,7 +8,7 @@
                 <h2>True Games</h2>
                 <p>Мы занимаемся продажей игровых приставок и аксессуаров</p>
             </div>
-            <img src="/img/logo.jpg" class="about__logo ms-auto" alt="">
+            <img src="/img/logo.png" class="about__logo ms-auto" alt="">
         </div>
 
         <div id="carouselExample" class="carousel slide mt-5">

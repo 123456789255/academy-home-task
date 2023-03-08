@@ -2,8 +2,9 @@
 
 @section('content')
     <div class="container about">
-        <h1>Copy Star о нас:</h1>
-        <div class="d-flex mb-5">
+        <h1>Copy Star <br><strong>О нас:</strong></h1>
+        <div class="d-flex mb-5 flex-mobile-column">
+            <img src="/public/img/logo.png" class="about__logo desktop-dnone about__logo_mobile" alt="">
             <div class="me-auto">
                 <p>Мы молодая и динамично развивающаяся компания, специализирующаяся на продаже высококачественного
                     копировального оборудования предприятиям любого размера. Делая акцент на предоставлении исключительного
@@ -26,15 +27,15 @@
                     оборудовать новый офис новейшими технологиями, Copy Star — это надежный поставщик высококачественного
                     копировального оборудования и исключительного обслуживания.</p>
             </div>
-            <img src="/public/img/logo.jpg" class="about__logo ms-auto mt-auto mb-auto" alt="">
+            <img src="/public/img/logo.png" class="about__logo ms-auto mt-auto mb-auto mobile-dnone" alt="">
         </div>
         <h2 class="text-start w-100 mt-5 mb-4">Новинки</h2>
         <div id="carouselExample" class="carousel slide mb-5">
             <div class="carousel-inner container">
                 <div class="carousel-item active">
-                    <div class="d-flex justify-content-around">
+                    <div class="d-flex justify-content-around flex-mobile-column ">
                         @foreach ($products as $product)
-                            <div class="product">
+                            <div class="product mobile-product">
                                 <a href="{{ route('product', $product->id) }}">
                                     <img src="/public/img/{{ $product->image }}" alt="{{ $product->name }}">
                                     <h3>{{ $product->name }}</h3>
@@ -45,9 +46,9 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <div class="d-flex justify-content-around">
+                    <div class="d-flex justify-content-around flex-mobile-column ">
                         @foreach ($products as $product)
-                            <div class="product">
+                            <div class="product mobile-product">
                                 <a href="{{ route('product', $product->id) }}">
                                     <img src="/public/img/{{ $product->image }}" alt="{{ $product->name }}">
                                     <h3>{{ $product->name }}</h3>

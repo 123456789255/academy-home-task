@@ -31,16 +31,16 @@
         <div class="products">
             @foreach ($products as $product)
                 <div class="product">
-                    <a href="{{ route('product', $product->id) }}">
+                    <a href="{{ route('product', $product->id) }}" class="text-black none-underline">
                         <img src="/public/img/{{ $product->image }}" alt="{{ $product->name }}">
                         <h3>{{ $product->name }}</h3>
                         <p class="price">{{ $product->price }} руб.</p>
-                        <form action="{{ route('cart.add', ['productId' => $product->id]) }}" method="POST">
+                        <form action="{{ route('cart.add', ['productId' => $product->id]) }}" method="POST" class="w-100">
                             @csrf
-                            <input type="number" name="quantity" value="1" min="1">
-                            <button type="submit">Add to Cart</button>
-                          </form>
+                            <button type="submit" class="btn btn-primary w-100">Добавить в корзину</button>
+                        </form>
                     </a>
+
                 </div>
             @endforeach
         </div>
