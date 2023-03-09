@@ -19,8 +19,7 @@ return new class extends Migration
             $table->string('image');
             $table->integer('price');
             $table->integer('year');
-            $table->enum('category', ['laser', 'inkjet', 'thermal']);
-            $table->boolean('in_stock')->default(true);
+            $table->string('category');
             $table->integer('quantity');
             $table->string('description');
             $table->string('model');

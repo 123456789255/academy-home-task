@@ -48,7 +48,7 @@
                     @foreach ($carts as $cart)
                         <tr class="d-flex justify-content-between w-100 mb-3 cart__tr_body">
                             <td class="w-50 d-flex justify-content-start align-center"><img
-                                    src="/public/img/{{ $cart->product->image }}" alt="product-photo" class="cart-img">
+                                    src="/public/img/{{ $cart->product->image }}" alt="product-photo" class="cart-img w-100">
                             </td>
                             <td class="w-33 d-flex justify-content-start align-center w-100 ps-4">
                                 <div class="w-100">

@@ -37,37 +37,17 @@
                 <div class="collapse navbar-collapse ms-auto" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
-                        <li><a class="nav-link" href="{{ url('/') }}">О нас</a></li>
-                        <li><a class="nav-link" href="{{ url('/catalog') }}">Каталог</a></li>
-                        <li><a class="nav-link" href="{{ url('/where') }}">Где нас найти?</a></li>
+                        <li><a class="nav-link" href="{{ url('/admin') }}">Администратор</a></li>
+                        <li><a class="nav-link" href="{{ url('/admin/orders') }}">Заказы</a></li>
+                        <li><a class="nav-link" href="{{ url('/admin/products') }}">Товары</a></li>
+                        <li><a class="nav-link" href="{{ url('/admin/category') }}">Категории</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav">
                         <!-- Authentication Links -->
                         @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Войти') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Зарегистрироваться') }}</a>
-                                </li>
-                            @endif
                         @else
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('cart.show') }}">
-                                    {{ __('Корзина') }}
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('orders.index') }}">
-                                    {{ __('Заказы') }}
-                                </a>
-                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();

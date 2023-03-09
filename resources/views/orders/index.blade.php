@@ -24,16 +24,24 @@
                             <td class="text-center">{{ $order->created_at->format('d.m.Y H:i') }}</td>
                             <td class="text-center">{{ $order->status }}</td>
                             <td class="text-center">{{ $order->items->sum('quantity') }}</td>
-                            <td class="text-center">{{ $order->items->sum(function ($cart) {return $cart->product->price * $cart->quantity;}) }} руб.</td>
+                            <td class="text-center">
+                                {{ $order->items->sum(function ($cart) {return $cart->product->price * $cart->quantity;}) }}
+                                руб.</td>
                             <td class="d-flex justify-content-center">
-                                <a href="{{ route('orders.show', ['order' => $order->id]) }}" class="btn btn-primary">
-                                    {{ __('Просмотреть') }}
-                                </a>
-                                <form action="{{ route('orders.destroy', $order->id) }}" method="POST" class="ms-1">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm h-100">Удалить</button>
-                                </form>
+                                @if ($order->status == 'Новый')
+                                    <a href="{{ route('orders.show', ['order' => $order->id]) }}" class="btn btn-primary">
+                                        {{ __('Просмотреть') }}
+                                    </a>
+                                    <form action="{{ route('orders.destroy', $order->id) }}" method="POST" class="ms-1">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm h-100">Удалить</button>
+                                    </form>
+                                @else
+                                    <a href="{{ route('orders.show', ['order' => $order->id]) }}" class="btn btn-primary">
+                                        {{ __('Просмотреть') }}
+                                    </a>
+                                @endif
                             </td>
                         </tr>
                     @endforeach

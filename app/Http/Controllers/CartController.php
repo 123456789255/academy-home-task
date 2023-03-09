@@ -24,10 +24,7 @@ class CartController extends Controller
         $quantity = $request->input('quantity', 1);
 
         if ($quantity > $product->quantity) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Товаров в наличии недостаточно',
-            ]);
+            return redirect()->back();
         }
 
         $cart = Cart::where('user_id', Auth::id())

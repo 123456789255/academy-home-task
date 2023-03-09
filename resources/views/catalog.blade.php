@@ -7,9 +7,9 @@
             <form method="get" class="filter__form">
                 <select name="category">
                     <option value="">Все категории</option>
-                    <option value="laser">Лазерные принтеры</option>
-                    <option value="inkjet">Струйные принтеры</option>
-                    <option value="thermal">Термопринтеры</option>
+                    <option value="Лазерные принтеры">Лазерные принтеры</option>
+                    <option value="Струйные принтеры">Струйные принтеры</option>
+                    <option value="Термопринтеры">Термопринтеры</option>
                 </select>
 
                 <select name="sort_by">
@@ -31,7 +31,7 @@
         <div class="products">
             @foreach ($products as $product)
                 <div class="product">
-                    <a href="{{ route('product', $product->id) }}" class="text-black none-underline">
+                    <a href="{{ route('product', $product->id) }}" class="text-black none-underline product_link">
                         <img src="/public/img/{{ $product->image }}" alt="{{ $product->name }}">
                         <h3>{{ $product->name }}</h3>
                         <p class="price">{{ $product->price }} руб.</p>
