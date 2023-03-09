@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $title ?? 'True Games'}}</title>
+    <title>{{ $title ?? 'True Games' }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -38,8 +38,8 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <li><a class="nav-link" href="{{ url('/') }}">О нас</a></li>
-                        <li><a class="nav-link" href="{{ url('/catalog') }}">Каталог</a></li>
                         <li><a class="nav-link" href="{{ url('/where') }}">Где нас найти?</a></li>
+                        <li><a class="nav-link" href="{{ url('/catalog') }}">Каталог</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -58,26 +58,36 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('cart.show') }}">
+                            <li>
+                                <a class="nav-link dropdown-item" href="{{ route('cart.show') }}">
                                     {{ __('Корзина') }}
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('orders.index') }}">
+                            <li>
+                                <a class="nav-link dropdown-item" href="{{ route('orders.index') }}">
                                     {{ __('Заказы') }}
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Выйти') }}
+
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
                                 </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
+
+
+                                <div class="dropdown-menu dropdown-menu-end p-2" aria-labelledby="navbarDropdown">
+                                    <a class="nav-link dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                        {{ __('Выход') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
                             </li>
                         @endguest
                     </ul>

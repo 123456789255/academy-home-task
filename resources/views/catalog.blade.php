@@ -7,9 +7,9 @@
             <form method="get" class="filter__form">
                 <select name="category">
                     <option value="">Все категории</option>
-                    <option value="Лазерные принтеры">Лазерные принтеры</option>
-                    <option value="Струйные принтеры">Струйные принтеры</option>
-                    <option value="Термопринтеры">Термопринтеры</option>
+                    <option value="1">Лазерные принтеры</option>
+                    <option value="2">Струйные принтеры</option>
+                    <option value="3">Термопринтеры</option>
                 </select>
 
                 <select name="sort_by">
